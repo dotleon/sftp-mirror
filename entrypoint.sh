@@ -7,7 +7,7 @@
 # Mirror entire contents of local directory to remote directory
 function sftp_mirror_full() {
   echo "Initializing LFTP file transfer: Full Mirror Mode..."
-  lftp ${PROTOCOL}://${HOSTNAME}:${PORT} -u ${USERNAME},${PASSWORD} -e "mirror ${ARGS} -R ${PATH_LOCAL} ${PATH_REMOTE}"
+  lftp ${PROTOCOL}://${HOSTNAME}:${PORT} -u ${USERNAME},${PASSWORD} –ignore-time -e "mirror ${ARGS} -R ${PATH_LOCAL} ${PATH_REMOTE}"
   echo "SFTP Mirror operation completed. Please verify the status of your files."
 }
 
